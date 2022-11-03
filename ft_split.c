@@ -11,42 +11,66 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-char **ft_split(char const *char, char c)
-{
-	int	len;
-	int *count;
-	int i;
-	int old_i;
-	char **strings;
-	strings = malloc(sizeof(char *) * *count);
-	char buffer[16384];
-	int string_index;
-	int string_index = 0;
-	
-	i = 0;
-	len = ft_strlen(char);
-	count = 0;
-	while (i < len)
-	{
-		while(i < len)
-		{
-		// step trhough any separators C occuring first
-		if (ft_strchr(c, char[i]) == NULL)
-			break;
-		i++;
-		}
-		// guarding the case if substring not finded
-		old_i = i;
-		// iterating the string again and detect next separator char 
-		while (i < len)
-		{
-			if (strchr(c, char[i]) != NULL )
-				break; 
-			i++;
-		}
-		if (i > old_i)
-			*count += 1;
-		
-	}
 
+//contar as palavras delimitadas por "c"
+//static para permanecer enquanto o prog corre
+static	int 	word_count(const char *str, char c)
+{
+	int	words;
+	int separator;
+	int i;
+
+	words = 0;
+	separator = 0;
+	while (str[i] != '\0')
+	{
+		if(str[i] != c && separator == 0)
+		{
+			separator = 1;
+			words++;
+		}
+		else if (str[i] == c)
+			separator = 0;
+		str++;
+	}
+	return (words);
+}
+//duplicadas
+static	char	*word_dup(const char *str, int s, int f)
+{
+	char	*word;
+	int	i;
+
+	i = 0;
+	word = malloc((f-s + 1) * sizeof(char));
+	while (s < f)
+	{
+		word[i++] = str[s++];
+	}
+	word[i] = '\0';
+	return (word);
+}
+
+char **ft_split(char const *s, char c)
+{
+	size_t	i;
+	size_t	j;
+	int	index;
+	char **split;
+	split = malloc((word_count(s, c) + 1) * sizeof(char *));
+	if (!s || !split)
+		reutrn (0);
+	while (i <= ft_strlen(s))
+	{
+		if (s[i] != c && index < 0)
+			index = i;
+		else if((s[i] == c || i == ft_strlen(s)) & index >= 0)
+		{
+			split[j++] = word_dup(s, index, i);
+			index = - 1;
+		}
+		i++;
+	}
+	split[j] = 0;
+	return (split);
 }
