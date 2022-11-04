@@ -6,7 +6,7 @@
 /*   By: rmorais <rmorais@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 19:21:44 by rmorais           #+#    #+#             */
-/*   Updated: 2022/10/27 18:38:00 by rmorais          ###   ########.fr       */
+/*   Updated: 2022/11/04 16:08:26 by rmorais          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 size_t	ft_strlen(const char *s)
 {
-	size_t i;
+	size_t	i;
 
 	i = 0;
 	while (s[i])
@@ -23,4 +23,3 @@ size_t	ft_strlen(const char *s)
 	}
 	return (i);
 }
-

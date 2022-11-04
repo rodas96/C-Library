@@ -6,7 +6,7 @@
 /*   By: rmorais <rmorais@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/27 16:40:56 by rmorais           #+#    #+#             */
-/*   Updated: 2022/10/27 20:15:04 by rmorais          ###   ########.fr       */
+/*   Updated: 2022/11/04 16:29:06 by rmorais          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 		dst[j + i] = src[i];
 		i++;
 	}
-		dst[j+i] = '\0';
-		return (ft_strlen(src)+j);
+	dst [j + i] = '\0';
+	return (ft_strlen(src)+j);
 }
-

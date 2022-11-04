@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: rmorais <rmorais@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 17:51:14 by marvin            #+#    #+#             */
-/*   Updated: 2022/10/28 17:51:14 by marvin           ###   ########.fr       */
+/*   Updated: 2022/11/04 16:11:31 by rmorais          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	*ft_calloc(size_t nitems, size_t size)
 {
-	void *ptr;
+	void	*ptr;
 
 	ptr = malloc(nitems * size);
 	if (ptr == NULL)

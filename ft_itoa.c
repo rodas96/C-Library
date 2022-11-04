@@ -6,34 +6,56 @@
 /*   By: rmorais <rmorais@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 14:25:42 by rmorais           #+#    #+#             */
-/*   Updated: 2022/10/25 18:04:09 by rmorais          ###   ########.fr       */
+/*   Updated: 2022/11/04 18:24:14 by rmorais          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static size_t	count_digits(int nb)
+static int	ft_getintlen(long int n)
 {
-	size_t	len;
-	if (nb == 0)
-		return (1);
+	int	len;
+
 	len = 0;
-	while (nb)
+	if (n == 0)
+		return (1);
+	if (n < 0)
 	{
 		len++;
-		nb = nb / 10;
+	}
+	while (n != 0)
+	{
+		len++;
+		n /= 10;
 	}
 	return (len);
 }
 
-/*
-inter to char
-dsc: allocate a new string that contains the integer into char
-arg - 
-*/
-char *ft_itoa(int n)
+char	*ft_itoa(int n)
 {
-	char *str;
-	size_t digits;
-	
+	char	*str;
+	long int	nbr;
+	size_t	len;
+
+	nbr = n;
+	len = ft_getintlen(nbr);
+	str = malloc(sizeof(char) * (len + 1));
+	if (!str)
+		return (NULL);
+	if (nbr < 0)
+	{
+		str[0] = '-';
+		nbr = -nbr;
+	}
+	else if (nbr == 0)
+	{
+		str[0] = 48;
+	}
+	str[len] = '\0';
+	while (nbr != 0)
+	{
+		str[--len] = nbr % 10 + 48;
+		nbr /= 10;
+	}
+	return (str);
 }
