@@ -6,7 +6,7 @@
 /*   By: rmorais <rmorais@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 14:25:42 by rmorais           #+#    #+#             */
-/*   Updated: 2022/11/04 18:24:14 by rmorais          ###   ########.fr       */
+/*   Updated: 2022/11/08 15:49:31 by rmorais          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,9 @@ static int	ft_getintlen(long int n)
 
 char	*ft_itoa(int n)
 {
-	char	*str;
+	char		*str;
 	long int	nbr;
-	size_t	len;
+	size_t		len;
 
 	nbr = n;
 	len = ft_getintlen(nbr);

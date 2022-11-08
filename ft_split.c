@@ -6,72 +6,56 @@
 /*   By: rmorais <rmorais@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 15:59:21 by marvin            #+#    #+#             */
-/*   Updated: 2022/11/04 18:22:00 by rmorais          ###   ########.fr       */
+/*   Updated: 2022/11/08 16:37:10 by rmorais          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/* #include "libft.h"
+#include "libft.h"
 
-static int	word_count(const char *str, char c)
+static int	ft_strcounter(const char *str, char c)
 {
-	size_t	words;
-	size_t	separator;
+	size_t	count;
 	size_t	i;
 
-	words = 0;
-	separator = 0;
+	count = 0;
 	i = 0;
+	if (!str)
+		return (0);
 	while (str[i] != '\0')
 	{
-		if (str[i] != c && separator == 0)
-		{
-			separator = 1;
-			words++;
-		}
-		else if (str[i] == c)
-			separator = 0;
-		str++;
+		while (str[i] != c && str[i] != '\0')
+			i++;
+		while (str[i] == c && str[i] != '\0')
+			i++;
+		count++;
 	}
-	return (words);
-}
-
-static	char	*word_dup(const char *str, int s, int f)
-{
-	char	*word;
-	size_t	i;
-
-	i = 0;
-	word = malloc((f - s + 1) * sizeof(char));
-	while (s < f)
-	{
-		word[i++] = str[s++];
-	}
-	word[i] = '\0';
-	return (word);
+	return (count);
 }
 
 char	**ft_split(char const *s, char c)
 {
+	char	**split;
 	size_t	i;
 	size_t	j;
-	size_t	index;
-	char	**split;
+	size_t	old_i;
 
-	split = malloc((word_count(s, c) + 1) * sizeof(char *));
+	i = 0;
+	j = 0;
+	split = malloc(sizeof(char *) * (ft_strcounter(s, c) + 1));
 	if (!s || !split)
 		return (0);
-	while (i <= ft_strlen(s))
+	while (s[i] != '\0')
 	{
-		if (s[i] != c && index < 0)
-			index = i;
-		else if ((s[i] == c || i == ft_strlen(s)) && index >= 0)
-		{
-			split [j++] = word_dup(s, index, i);
-			index = -1;
-		}
-		i++;
+		while (s[i] == c && s[i] != '\0')
+			i++;
+		if (!s[i])
+			break ;
+		old_i = i;
+		while (s[i] != c && s[i] != '\0')
+			i++;
+		split[j] = ft_substr(s, old_i, i - old_i);
+		j++;
 	}
-	split[j] = 0;
+	split[j] = NULL;
 	return (split);
 }
- */
