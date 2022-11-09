@@ -6,7 +6,7 @@
 /*   By: rmorais <rmorais@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/27 23:21:19 by rmorais           #+#    #+#             */
-/*   Updated: 2022/11/04 15:58:39 by rmorais          ###   ########.fr       */
+/*   Updated: 2022/11/09 18:48:09 by rmorais          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 
 	j = 0;
 	i = 0;
-	if (little == NULL)
+	if (little == NULL || little[0] == '\0')
 		return ((char *)big);
 	while (big[i] != '\0')
 	{

@@ -6,7 +6,7 @@
 /*   By: rmorais <rmorais@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 17:51:14 by marvin            #+#    #+#             */
-/*   Updated: 2022/11/04 16:11:31 by rmorais          ###   ########.fr       */
+/*   Updated: 2022/11/09 19:04:35 by rmorais          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,14 @@
 void	*ft_calloc(size_t nitems, size_t size)
 {
 	void	*ptr;
+	size_t	var;
 
-	ptr = malloc(nitems * size);
+	var = nitems * size;
+	if (size != (var / nitems))
+		return (NULL);
+	ptr = malloc(var);
 	if (ptr == NULL)
 		return (ptr);
-	ft_bzero(ptr, size * nitems);
+	ft_bzero(ptr, var);
 	return (ptr);
 }

@@ -6,31 +6,44 @@
 #    By: rmorais <rmorais@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/25 17:33:41 by rmorais           #+#    #+#              #
-#    Updated: 2022/10/25 19:03:16 by rmorais          ###   ########.fr        #
+#    Updated: 2022/11/09 22:28:49 by rmorais          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 #VARIABLE
 
-NAME := libft.a
-CC	:= gcc
-CFLAGS 	:= -Wall -Wextra -Werror -c
-OBJ	:= $(patsubst %.c, %.o,$(wildcard *.c))
+NAME = libft.a
 
-all: $(NAME)
+SRC = ft_memset ft_bzero ft_memcpy ft_memmove ft_memchr\
+ft_memcmp ft_strlen ft_strlcpy ft_strlcat ft_strchr ft_strrchr\
+ft_substr ft_putchar_fd ft_putstr_fd ft_putendl_fd ft_putnbr_fd\
+ft_strnstr ft_strncmp ft_atoi ft_isalpha ft_isdigit ft_isalnum\
+ft_isascii ft_isprint ft_toupper ft_tolower ft_calloc ft_strdup\
+ft_strjoin ft_strtrim ft_strmapi ft_striteri ft_itoa ft_split\
 
-$(NAME): $(OBJ) | libft.h 
-	ar -crs libft.a *.o
-%.o: %.c
-	$(CC) $(CFLAGS) $^
+bonus = ft_lstnew ft_lstadd_front ft_lstsize ft_lstlast ft_lstadd_back\
+ft_lstdelone ft_lstclear ft_lstiter ft_lstmap\
+
+CC	= gcc
+RM	= rm -f
+CFLAGS 	= -Wall -Wextra -Werror
+AR		= ar rcs
+OBJSF	=	.cache_exists
+
+all: $(NAME) bonus
+
+$(NAME): $(SRC:=.o)
+	@$(AR) $(NAME) $(SRC:=.o)
+bonus:	$(BONUS:=.o)
+			@$(AR) $(NAME) $(BONUS:=.o)
 
 #Remove the object files after the creation of libft.a
 
-.PHONY : clean
-
 clean: 
-	rm -f *.o
+	@$(RM)	$(SRC:=.o) $(BONUS:=.o)
 fclean: clean
-	rm -f $(NAME)
+	@$(RM) -f $(NAME)
 re: fclean all
+
+.PHONY:		all clean fclean re
 
