@@ -6,7 +6,7 @@
 /*   By: rmorais <rmorais@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/27 18:45:41 by rmorais           #+#    #+#             */
-/*   Updated: 2022/11/09 18:41:38 by rmorais          ###   ########.fr       */
+/*   Updated: 2022/11/11 16:54:28 by rmorais          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,6 @@ char	*ft_strchr(const char *s, int c)
 int main()
 {
 	char str[] = "aso5dlol";
-	int	c = '5' + 100;
+	int	c = '5';
 	printf("%s", ft_strchr(str, c));
 } */

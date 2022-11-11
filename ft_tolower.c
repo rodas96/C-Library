@@ -6,13 +6,13 @@
 /*   By: rmorais <rmorais@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 18:28:44 by rmorais           #+#    #+#             */
-/*   Updated: 2022/11/04 16:07:18 by rmorais          ###   ########.fr       */
+/*   Updated: 2022/11/10 20:32:20 by rmorais          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	ft_tolower(char c)
+int	ft_tolower(int c)
 {
 	if (c >= 'A' && c <= 'Z')
-		c += 32;
+		return (c + 32);
 	return (c);
 }

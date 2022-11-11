@@ -6,7 +6,7 @@
 #    By: rmorais <rmorais@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/25 17:33:41 by rmorais           #+#    #+#              #
-#    Updated: 2022/11/09 22:28:49 by rmorais          ###   ########.fr        #
+#    Updated: 2022/11/10 18:05:55 by rmorais          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,7 @@ ft_strnstr ft_strncmp ft_atoi ft_isalpha ft_isdigit ft_isalnum\
 ft_isascii ft_isprint ft_toupper ft_tolower ft_calloc ft_strdup\
 ft_strjoin ft_strtrim ft_strmapi ft_striteri ft_itoa ft_split\
 
-bonus = ft_lstnew ft_lstadd_front ft_lstsize ft_lstlast ft_lstadd_back\
+BONUS = ft_lstnew ft_lstadd_front ft_lstsize ft_lstlast ft_lstadd_back\
 ft_lstdelone ft_lstclear ft_lstiter ft_lstmap\
 
 CC	= gcc
@@ -35,10 +35,7 @@ all: $(NAME) bonus
 $(NAME): $(SRC:=.o)
 	@$(AR) $(NAME) $(SRC:=.o)
 bonus:	$(BONUS:=.o)
-			@$(AR) $(NAME) $(BONUS:=.o)
-
-#Remove the object files after the creation of libft.a
-
+	@$(AR) $(NAME) $(BONUS:=.o)
 clean: 
 	@$(RM)	$(SRC:=.o) $(BONUS:=.o)
 fclean: clean
@@ -46,4 +43,3 @@ fclean: clean
 re: fclean all
 
 .PHONY:		all clean fclean re
-
