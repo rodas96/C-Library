@@ -6,7 +6,7 @@
 /*   By: rmorais <rmorais@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/10 18:47:42 by rmorais           #+#    #+#             */
-/*   Updated: 2022/11/11 18:17:43 by rmorais          ###   ########.fr       */
+/*   Updated: 2022/11/11 20:18:07 by rmorais          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	t_list *node;
+	t_list	*node;
 
 	if (!*lst)
 	{
