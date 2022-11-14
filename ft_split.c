@@ -6,7 +6,7 @@
 /*   By: rmorais <rmorais@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 15:59:21 by marvin            #+#    #+#             */
-/*   Updated: 2022/11/14 15:40:26 by rmorais          ###   ########.fr       */
+/*   Updated: 2022/11/14 16:36:21 by rmorais          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,12 @@ static int	ft_strcounter(const char *str, char c)
 		return (0);
 	while (str[i] != '\0')
 	{
-		while (str[i] != c && str[i] != '\0')
-			i++;
 		while (str[i] == c && str[i] != '\0')
 			i++;
-		count++;
+		if (str[i] != c && str[i] != '\0')
+			count += 1;
+		while (str[i] != c && str[i] != '\0')
+			i++;
 	}
 	return (count);
 }
