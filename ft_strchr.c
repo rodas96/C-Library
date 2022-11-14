@@ -6,7 +6,7 @@
 /*   By: rmorais <rmorais@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/27 18:45:41 by rmorais           #+#    #+#             */
-/*   Updated: 2022/11/11 20:21:31 by rmorais          ###   ########.fr       */
+/*   Updated: 2022/11/14 14:22:18 by rmorais          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*ft_strchr(const char *s, int c)
 	i = 0;
 	while (s[i] != '\0')
 	{
-		if (s[i] == (unsigned char)c)
+		if (s[i] == (char)c)
 			return ((char *)&s[i]);
 		i++;
 	}

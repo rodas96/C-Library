@@ -6,7 +6,7 @@
 #    By: rmorais <rmorais@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/25 17:33:41 by rmorais           #+#    #+#              #
-#    Updated: 2022/11/10 18:05:55 by rmorais          ###   ########.fr        #
+#    Updated: 2022/11/14 15:12:15 by rmorais          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,7 @@ ft_strjoin ft_strtrim ft_strmapi ft_striteri ft_itoa ft_split\
 BONUS = ft_lstnew ft_lstadd_front ft_lstsize ft_lstlast ft_lstadd_back\
 ft_lstdelone ft_lstclear ft_lstiter ft_lstmap\
 
-CC	= gcc
+CC	= cc
 RM	= rm -f
 CFLAGS 	= -Wall -Wextra -Werror
 AR		= ar rcs
